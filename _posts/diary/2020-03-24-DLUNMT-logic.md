@@ -1,11 +1,12 @@
-## The logic of DLUNMT
-
-
+---
+layout: post
+title: "The logic of DLUNMT"
+author: Guanlin Li
+tag: diary
+---
 
 - toc
 {:toc}
-
-
 ### What is the right logic?
 
 > This section is to clarify why we want to investigate the emergence of correct supervision and learned knowledge during the training of (unsupervised) NMT model.

@@ -1,3 +1,10 @@
+---
+layout: post
+title: "Research Diary 2020/06/09"
+author: Guanlin Li
+tag: diary
+---
+
 - **[V1]** Take top 20,000 frequent token and prune the rest;
 - **[V2]** Constrained decoding introduced in [mBART](https://arxiv.org/abs/2001.08210) [1]. HOW to get the independent vocabulary?
 

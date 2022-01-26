@@ -1,13 +1,12 @@
-### 无监督与半监督神经机器翻译的变分解释
-
-
+---
+layout: post
+title: "Variational formulation of UNMT"
+author: Guanlin Li
+tag: diary
+---
 
 - toc
 {:toc}
-
-
-
-
 无监督与半监督神经机器翻译均可视为最大化下面的边际似然.
 
 - 单语数据上的边际似然概率：$$P(y) = \sum_{x} P(x, y)$$

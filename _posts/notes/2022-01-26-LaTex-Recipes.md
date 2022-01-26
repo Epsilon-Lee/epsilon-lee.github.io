@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Recipes for Linux/Conda/Python/LaTex"
+title: "Recipes for LaTex"
 author: Guanlin Li
 tag: notes
 ---

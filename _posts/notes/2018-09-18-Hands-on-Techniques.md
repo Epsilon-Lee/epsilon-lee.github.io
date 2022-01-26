@@ -1,14 +1,12 @@
 ---
 layout: post
-title: "Hands-on Techniques for Computer Manipulation: Recipes"
+title: "Hands-on Techniques for Computer Manipulation: Recipes (deprecated)"
 author: Guanlin Li
 tag: notes
 ---
 
-* [Linux](#linux)
-* [Conda](#conda)
-* [Python](#python)
-* [LaTex](#latex)
+- toc
+{:toc}
 
 ## Linux
 

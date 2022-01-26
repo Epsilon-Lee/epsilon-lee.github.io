@@ -7,9 +7,9 @@ tag: notes
 
 - toc
 {:toc}
+## PyTorch/Numpy
 
-
-### Permute a batch of token id
+#### Permute a batch of token id
 
 ```python
 # x, xlen; x shape [N, L]

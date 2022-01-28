@@ -9,7 +9,7 @@ tag: diary
 {:toc}
 **01/28**
 
-### Is interpretable ML (IML) overpromising and underdelivering? `interpretale ml`
+#### Is interpretable ML (IML) overpromising and underdelivering? `interpretale ml`
 
 - An [article]() from ACM Queue about **current problems** of Interpretable ML (IML)
 - `TL;DR` we describe some of the **obstacles** impeding progress in this field and propose a <u>'diagnostic'</u> vision for IML to overcome these obstacles.
@@ -18,7 +18,7 @@ tag: diary
 
 
 
-### Discussion with Yang Zhao about domain identification and clustering `application` `data-centric` `domain adaptation`
+#### Discussion with Yang Zhao about domain identification and clustering `application` `data-centric` `domain adaptation`
 
 - [Unsupervised Domain Clusters in Pretrained Language Models](https://arxiv.org/pdf/2004.02105.pdf), ACL 2020.
 

@@ -16,3 +16,11 @@ tag: diary
   - **Problem**: a lack of clear evidence and usage guidelines for how IML (e.g. better trust and debugging) may actually help consumers.
   - **Solution**: researchers and consumers should work together to identify well-defined *target use cases* as part of developing a diagnostic treatment of IML methods.
 
+
+
+### Discussion with Yang Zhao about domain identification and clustering `application` `data-centric` `domain adaptation`
+
+- [Unsupervised Domain Clusters in Pretrained Language Models](https://arxiv.org/pdf/2004.02105.pdf), ACL 2020.
+
+We read the above paper and learn about `GMM` clustering of dense sentence vectors, **purity** metrics for unsupervised evaluation of clustering.
+

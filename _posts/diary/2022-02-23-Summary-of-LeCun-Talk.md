@@ -1,10 +1,3 @@
----
-lecundiarylayout: post
-title: "Summary of LeCun's Work at Baidu"
-author: Guanlin Li
-tag: diary
----
-
 
 - toc
 {:toc}

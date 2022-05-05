@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Sliding window and double links"
+title: "Sliding window and double pointers"
 author: Guanlin Li
 tag: leetcode
 ---

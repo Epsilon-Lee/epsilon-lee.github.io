@@ -14,15 +14,19 @@ The problem is kept simple and concise for exploration as a beginner. It is **Ba
 So let us first restate the Bayesian formulation of logistic regression. **BLR** can be depicted as the above graphical model. $$x_n$$ is the feature vector of a sample point, $$y_n$$ is its corresponding label, $$y_n \in \{0,1\}$$. For the convenience of visualization, I will set that $$x_n \in \mathbb{R^2}$$. For every sample point, the probability of its label is defined as: 
 
 
-$$ P(y_n \vert w; x_n, b) = p_i^{1[y_n=1]} (1-p_i)^{1[y_n=0]} $$
+$$
+P(y_n \vert w; x_n, b) = p_i^{1[y_n=1]} (1-p_i)^{1[y_n=0]}
+$$
 
 
 $$1[\cdot]$$ is the indicator function, where
 
 
-$$ p_i = \frac{1}{1 + \exp(-b - w^T x_n)} $$
+$$
+p_i = \frac{1}{1 + \exp(-b - w^T x_n)}
+$$
 
-$$p_i​$$ is the logistic sigmod function value of $$(-b-\mathbb{w}^T x_n)​$$. To clarify notation, $$P(\cdot)​$$ is used as a probability (measure) operator, the vertical bar $$ \vert ​$$ means that the expression before is conditioned on the after; and the colon ';' means expressions after are seen as constant. See the following comment. 
+$$p_i$$ is the logistic sigmod function value of $$(-b-\mathbb{w}^T x_n)$$. To clarify notation, $$P(\cdot)$$ is used as a probability (measure) operator, the vertical bar $$ \vert $$ means that the expression before is conditioned on the after; and the colon ';' means expressions after are seen as constant. See the following comment. 
 
 > **Comment** More words on the notations. In the book Pattern Recognition and Machine Learning (PRML), every expressions which have the semantic meaning 'observed'/'given'/'conditioned on' are after vertical bar $$\vert$$. E.g. $$ p(t\vert\pi, \mathbb{\mu_1}, \mathbb{\mu_2}, \mathbb{\Sigma}) $$, here we don't know whether $$ \pi, \mathbb{\mu_1}, \mathbb{\mu_2}, \mathbb{\Sigma} $$ are seen as random variables or not as within Bayesian context. In the book Pattern Classification, the notation is consistent with PRML. In Machine Learning: A Probabilistic Perspective (MLaPP), the definition of logistic regression model is: $$ p(y \vert x, \mathbb{w}) = Ber(y \vert sigm(\mathbb{w}^T x)) $$, whereas in PRML is: $$ p(t \vert \mathbb{w}) = y_n^{t_n} \{ 1-y_n \}^{1-t_n} $$, where $$ y_n = p(\mathcal{C}_1 \vert \phi_n)$$ and $$ \phi_n = \phi(x_n) $$. As for MLaPP, it is not clear whether $ x $ is seen as a random variable or not, and both books tacle with Bayesian approach towards logistic regression later on. To be more clarified, I would like to propose the use of colon $ ; $ symbol, and the conditional probability will always have the following form: $$ P(\cdot \vert \cdot ; \cdot) $$. We always see expressions after $$\vert$$ and before ; as r.v.s and expression after ; as constants. This leads to the expression in our first equation, i.e. $$ P(y_n \vert \mathbb{w}; x_n, b) $$. And in $$ \mathcal{N}(x; \mathbb{\mu}, \mathbb{\Sigma}) $$, $$ \mathbb{\mu} $$ and $$ \mathbb{\Sigma} $$ are not seen as r.v.s.
 
@@ -31,7 +35,9 @@ The so-called Bayesian is that we put prior knowledge on the value of $$w$$. Spe
 
 
 
-$$P(w) = \mathcal{N}(0, \sigma^2 \mathbb{I}_2) = \frac{1}{2 \pi} \frac{1}{\sigma} \exp \{ - \frac{\vert \vert x \vert \vert^2}{2\sigma^2} \}$$
+$$
+P(w) = \mathcal{N}(0, \sigma^2 \mathbb{I}_2) = \frac{1}{2 \pi} \frac{1}{\sigma} \exp \{ - \frac{\vert \vert x \vert \vert^2}{2\sigma^2} \}
+$$
 
 
 
@@ -39,7 +45,9 @@ Since we know Multivariate Gaussian is:
 
 
 
-$$ \mathcal{N}(x;\mathbb{\mu}, \mathbb{\Sigma}) = \frac{1}{(2\pi)^{D/2}} \frac{1}{\vert \mathbb{\Sigma} \vert ^{1/2}} exp\{ -\frac{1}{2} (x - \mathbb{\mu})^T \Sigma^{-1} (x - \mathbb{\mu}) \} $$
+$$
+\mathcal{N}(x;\mathbb{\mu}, \mathbb{\Sigma}) = \frac{1}{(2\pi)^{D/2}} \frac{1}{\vert \mathbb{\Sigma} \vert ^{1/2}} exp\{ -\frac{1}{2} (x - \mathbb{\mu})^T \Sigma^{-1} (x - \mathbb{\mu}) \}
+$$
 
 
 
@@ -47,7 +55,9 @@ Here, the assumed distribution on $$ \mathbb{w} $$ is **spherical Gaussian** wit
 
 
 
-$$ P(\mathcal{D} \vert w; b) = P(\{y_n\}_{n=1}^{N} \vert w; \{x_n\}_{n=1}^{N}, b) $$
+$$
+P(\mathcal{D} \vert w; b) = P(\{y_n\}_{n=1}^{N} \vert w; \{x_n\}_{n=1}^{N}, b)
+$$
 
 
 
@@ -55,7 +65,9 @@ This is called the likelihood of the data under the model parameterized by $$ \m
 
 
 
-$$ P(\mathbb{w} \vert \mathcal{D}) = \frac{ P(\mathcal{D} \vert w) P(w)}{ P(\mathcal{D}) } = \frac{ P(\mathcal{D} \vert w) P(w)}{ \int_{\mathbb{w}} d\mathbb{w} P(\mathcal{D} \vert w) P(w) } $$
+$$
+P(\mathbb{w} \vert \mathcal{D}) = \frac{ P(\mathcal{D} \vert w) P(w)}{ P(\mathcal{D}) } = \frac{ P(\mathcal{D} \vert w) P(w)}{ \int_{\mathbb{w}} d\mathbb{w} P(\mathcal{D} \vert w) P(w) }
+$$
 
 
 
@@ -63,7 +75,9 @@ Very different from Maximum Likelihood Estimation (MLE), to which the computatio
 
 
 
-$$ KL(Q \vert \vert P) = \int_{\mathbb{w}} Q log \frac{Q}{P} $$
+$$
+KL(Q \vert \vert P) = \int_{\mathbb{w}} Q log \frac{Q}{P}
+$$
 
 
 
@@ -104,7 +118,9 @@ Now, we have a random sample generator which is untrained! Sampling from it is a
 
 
 
-$$ \mathcal{O(\theta_Q)} = \mathbb{E}_{ \mathbb{w} \thicksim Q(\mathbb{w}) } log \frac{ Q(\mathbb{w}) }{ P(\mathbb{w}) } - \mathbb{E}_{ \mathbb{w} \thicksim Q(\mathbb{w}) } { log P(\mathcal{D} \vert \mathbb{w}) } $$
+$$
+\mathcal{O(\theta_Q)} = \mathbb{E}_{ \mathbb{w} \thicksim Q(\mathbb{w}) } log \frac{ Q(\mathbb{w}) }{ P(\mathbb{w}) } - \mathbb{E}_{ \mathbb{w} \thicksim Q(\mathbb{w}) } { log P(\mathcal{D} \vert \mathbb{w}) }
+$$
 
 
 
@@ -121,7 +137,9 @@ Assume that $$ P(\mathbb{w}, l) $$ is a joint probability over $ \mathbb{w} $ an
 
 
 
-$$ P(\mathbb{w}, l) = P(\mathbb{w} \vert l) P(l) = P(l \vert \mathbb{w}) P(\mathbb{w}) $$
+$$
+P(\mathbb{w}, l) = P(\mathbb{w} \vert l) P(l) = P(l \vert \mathbb{w}) P(\mathbb{w})
+$$
 
 
 
@@ -129,9 +147,13 @@ Here, the conditional probability of $$ \mathbb{w} $$ given label $$ l $$ means 
 
 
 
-$$ P(\mathbb{w} \vert l=1) P(l = 1) = P(l=1 \vert \mathbb{w}) P(\mathbb{w}) $$
+$$
+P(\mathbb{w} \vert l=1) P(l = 1) = P(l=1 \vert \mathbb{w}) P(\mathbb{w})
+$$
 
-$$ P(\mathbb{w} \vert l=-1) P(l = -1) = P(l=-1 \vert \mathbb{w}) P(\mathbb{w})$$
+$$
+P(\mathbb{w} \vert l=-1) P(l = -1) = P(l=-1 \vert \mathbb{w}) P(\mathbb{w})
+$$
 
 
 
@@ -139,7 +161,9 @@ Since we want to compute Q/P, so we can divide **lhs** and **rhs** of these two 
 
 
 
-$$ \frac{P(\mathbb{w} \vert l=1)}{P(\mathbb{w} \vert l=-1)} \cdot \frac{P(l=1)}{P(l=-1)} = \frac{P(l=1 \vert \mathbb{w})}{P(l=-1 \vert \mathbb{w})} $$
+$$
+\frac{P(\mathbb{w} \vert l=1)}{P(\mathbb{w} \vert l=-1)} \cdot \frac{P(l=1)}{P(l=-1)} = \frac{P(l=1 \vert \mathbb{w})}{P(l=-1 \vert \mathbb{w})}
+$$
 
 
 
@@ -147,7 +171,9 @@ We know so:
 
 
 
-$$ \frac{Q(\mathbb{w})}{P(\mathbb{w})} = \frac{P(l=-1)}{P(l=1)} \cdot \frac{P(l=1 \vert \mathbb{w})}{P(l=-1 \vert \mathbb{w})}  $$
+$$
+\frac{Q(\mathbb{w})}{P(\mathbb{w})} = \frac{P(l=-1)}{P(l=1)} \cdot \frac{P(l=1 \vert \mathbb{w})}{P(l=-1 \vert \mathbb{w})}
+$$
 
 
 
@@ -155,11 +181,13 @@ Most of time, we don't know whose sample frequency is larger, so we assume equal
 
 
 
-$$\begin{align}
+$$
+\begin{align}
 \frac{Q(\mathbb{w})}{P(\mathbb{w})} 
 &= \frac{P(l=1 | \mathbb{w})}{P(l=-1 | \mathbb{w})} \\
 &= \frac{P(l=1 | \mathbb{w})}{1 - P(l=1 | \mathbb{w})}
-\end{align}$$
+\end{align}
+$$
 
 
 
@@ -178,10 +206,9 @@ $$
 \end{align}
 $$
 
-
-$$ \text{Auxiliary}: \mathcal{O}(\theta_D) = \mathbb{E}_{\mathbb{w} \thicksim P(\mathbb{w})} log D(\mathbb{w}) + \mathbb{E}_{z \thicksim U(\cdot)} log (1 - D(G(z))) \ $$
-
+$$
+\text{Auxiliary}: \mathcal{O}(\theta_D) = \mathbb{E}_{\mathbb{w} \thicksim P(\mathbb{w})} log D(\mathbb{w}) + \mathbb{E}_{z \thicksim U(\cdot)} log (1 - D(G(z)))
+$$
 
 
 > <b>Comment.</b> I wonder whether my derivation is correct, since it is different from Ferenc's. I took a look into Ferenc's <a href="https://gist.github.com/fhuszar/a597906e994523a345744dc226f48f2d">ipython Notebook implementation</a> and found that the code is according to his definition of the discriminator's loss. I am still working on an explanation. 
-

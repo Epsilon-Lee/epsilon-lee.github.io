@@ -13,7 +13,9 @@ This track is about theoretical and empirical generalization analyses of deep le
 
 Their high-level motivation is the "overuse" of uniform convergence theory to derive generalization bounds for deep neural networks (heavily over-parameterized).
 
-$$\text{test_error} - \text{train_error} \leq \text{bound}$$
+$$
+\text{test\_error} - \text{train\_error} \leq \text{bound}
+$$
 
 They argue that:
 
@@ -28,11 +30,15 @@ They have two main findings in their paper:
 
 *Conventional* uniform convergence (u.c.) bounds: e.g. the VC dimension has the following form:
 
-$$\text{generalization_gap} \leq O(\sqrt{\frac{\text{representational complexity of whole hypotheses class}}{\text{training set size}}})$$
+$$
+\text{generalization\_gap} \leq O(\sqrt{\frac{\text{representational complexity of whole hypotheses class}}{\text{training set size}}})
+$$
 
 however, for NNs, the numerator "representational complexity of whole hypotheses class" can be related to millions of parameters, which makes this upper bound too large. So recent efforts proposed to refine the above bound by:
 
-$$\text{generalizat_gap} \leq O(\sqrt{\frac{\text{representation complexity of "relevant" subset of hypothesis class}}{\text{training set size}}})$$
+$$
+\text{generalizat\_gap} \leq O(\sqrt{\frac{\text{representation complexity of "relevant" subset of hypothesis class}}{\text{training set size}}})
+$$
 
 That is instead of measuring the complexity of the whole hypo. class, they turn to measure e.g. parameter's distance from initialization, spectral norm, $$L_{2, 1}$$ norm etc. All these works can be categorized into the following four:
 

@@ -26,5 +26,7 @@ Due to SP's connection to RL, a bunch of papers including [Sequence-level Traini
 
 Actually, most of such algorithms or models can be reformulated under the following mathematical form:
 
-$$\nabla_\theta = Q(\hat{y}_t; \hat{y}, x, y^*) \cdot \nabla P_\theta(\hat{y}_t \vert x, \hat{y}_{<t})$$
+$$
+\nabla_\theta = Q(\hat{y}_t; \hat{y}, x, y^*) \cdot \nabla P_\theta(\hat{y}_t \vert x, \hat{y}_{<t})
+$$
 

@@ -49,7 +49,5 @@ For a successful project, you must:
   - Look for gaps in the literature
     - GANs are hot outside NLP, why?
 
-
-
 #### Organizing a project and doing good science
 

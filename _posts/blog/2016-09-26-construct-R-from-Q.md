@@ -56,5 +56,5 @@ An ordered set $$S$$ is said to have **least-upper-bound property** if for any s
 >
 > - (D) Distributive Law  
 >
->   - $$$$x(y + z) = xy + xz$$$$ holds for all $$x, y, z \in F$$.
+>   - $$x(y + z) = xy + xz$$ holds for all $$x, y, z \in F$$.
 

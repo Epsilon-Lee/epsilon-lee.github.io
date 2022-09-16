@@ -85,8 +85,6 @@ I want to *highlight* their main points and to *absorb* them into my own researc
 
 [2] is my favorite paper till now during my PhD persuit, since it gives me standard or`dos and donts` when look into others or my own research.
 
-
-
 ---
 
 #### Conduct Research Scientifically

@@ -9,6 +9,17 @@ tag: diary
 
 - toc
 {:toc}
+### Jul. 10 2022
+
+- Ruili
+  - 这周就主要是按之前说的加入验证集后训练了一下模型，
+  - 我为了方便先做了切分测试集作为验证集的实验，从结果来看每类方法都比之前好了些（标记testdev的），两类扩增也都比baseline要好了些，非重复的扩增方法比有重复的要好更多
+  - （但考虑到时间关系，没有拿指标更好的baseline模型重新检索扩增样本，也就是两种扩增方法的训练数据和之前一样）；
+  - 然后用切分训练集作为验证集的实验，目前只训练了baseline方法，从结果来说和原来没有验证集的时候相差不大（标记为traindev的），
+  - 但由于训练集和之前不一样了，要重新检索样本，目前检索样本的程序还正在改进，所有扩增后的训练结果暂时没有，估计下周应该能看到，到时候有余力的话我也会把用检索获取样本、用bert-tagger输出的类别作为标签的方法加进去，试试最终效果如何。做了的三种方法的性能指标对比我就先发上来吧
+  - 就是最早没用验证集，直接训固定epoch的；是，比之前fixed的情况要好
+  - traindev是切分训练集的方法，前面的testdev是切分测试集的方法，traindev目前只训练了baseline方法，由于训练集和之前不一样了，要重新检索样本，目前检索样本的程序又还正在改进，所有扩增后的训练结果暂时没有，估计下周应该能看到
+
 ### May 29 2022
 
 - Ruili
@@ -34,6 +45,8 @@ tag: diary
     - Train model $$M$$ with $$D$$ 
     - use $$M$$ to filter $$D''$$ as importance sampling
       - Uncertainty
+- x1 .[xi:j].. xN
+
 - A general framework:
   - used for every NLP semi-supervised tasks
   - FET

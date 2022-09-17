@@ -152,7 +152,7 @@ $$ \hat{\theta} = argmax_\theta \sum_{x_i \in \mathcal{D}} \log P_\theta(x_i) $$
 
 Now, let us use the above formula for our estimation problem. The parameters are $$ \theta = \{ \theta_{j \vert i} \} $$. For one sequence $$x$$ in our training corpus $$\mathcal{D}$$. It's log likelihood is described by: 
 
-$$\log P_\theta(x) = \log P(\text{"w_1, w_2, ..., w_n"}) = \sum_i \log \theta_{w_{i+1} \vert w_i}$$
+$$\log P_\theta(x) = \log P(\text{"w\_1, w\_2, ..., w\_n"}) = \sum_i \log \theta_{w_{i+1} \vert w_i}$$
 
 which could be re-written as: 
 

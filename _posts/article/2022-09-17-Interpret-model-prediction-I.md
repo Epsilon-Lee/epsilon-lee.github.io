@@ -5,6 +5,8 @@ author: Guanlin Li
 tag: article
 ---
 
+*Author: Guanlin Li*
+
 - toc
 {:toc}
 ### Summary of two influential works

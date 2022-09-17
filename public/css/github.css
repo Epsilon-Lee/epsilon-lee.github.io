@@ -52,7 +52,7 @@ html {
 }*/
 
 body {
-    font-family: courier, fangsong;
+    font-family: Candara, fangsong;
     color: rgb(51, 51, 51);
     line-height: 1.6;
 }
@@ -400,9 +400,9 @@ tt {
 }
 
 /*header, .context-menu, .megamenu-content, footer{
-    font-family: "Segoe UI", "Arial", sans-serif;
+    font-family: "Segoe UI", "Arial", sans-serif, courier;
 }*/
 
 header, .context-menu, .megamenu-content, footer{
-    font-family: "Segoe UI", "Arial", courier, fangsong;
+    font-family: "Segoe UI", "Arial", Candara, fangsong;
 }

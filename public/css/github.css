@@ -45,8 +45,14 @@ html {
     font-size: 16px;
 }
 
-body {
+/*body {
     font-family: "Open Sans","Clear Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}*/
+
+body {
+    font-family: courier, fangsong;
     color: rgb(51, 51, 51);
     line-height: 1.6;
 }
@@ -393,6 +399,10 @@ tt {
     border-left-color: rgba(85, 85, 85, 0.12);
 }
 
-header, .context-menu, .megamenu-content, footer{
+/*header, .context-menu, .megamenu-content, footer{
     font-family: "Segoe UI", "Arial", sans-serif;
+}*/
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", courier, fangsong;
 }

@@ -45,7 +45,7 @@ tag: article_zh
 
 ### 盼望2023
 
-![understand_bias_embed_algorithm](../../public/img/article/arch_of_execution_2023.jpg)
+![](../../public/img/article/arch_of_execution_2023.jpg)
 
 2023，希望做事儿能更有条理，上图中呈现了一种条理，并且还在“便签”区域罗列了具体的内容项。
 
